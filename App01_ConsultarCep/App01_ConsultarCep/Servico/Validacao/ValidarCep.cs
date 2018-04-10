@@ -28,9 +28,9 @@ namespace App01_ConsultarCep.Servico.Validacao
             {
                 throw new Exception("O cep deve conter apenas número");
             }
-            //DadosCep dadosCep = new DadosCep();
-            //dadosCep.BuscarEnderecoViaCEP(endereco);
-            ViaCepServico.BuscarEnderecoViaCEP(endereco.Cep);
+            DadosCep dadosCep = new DadosCep();
+            dadosCep.BuscarEnderecoViaCEP(endereco);
+           
         }
     }
 }
