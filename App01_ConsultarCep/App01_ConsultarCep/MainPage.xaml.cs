@@ -12,12 +12,13 @@ namespace App01_ConsultarCep
 {
     public partial class MainPage : ContentPage
     {
-
+        
         public MainPage()
         {
             InitializeComponent();
 
             buttonBuscar.Clicked += BuscarCep;
+            
         }
 
         private void BuscarCep(object sender, EventArgs args)
@@ -28,7 +29,8 @@ namespace App01_ConsultarCep
   
                 endereco.Cep = entryCep.Text.Trim();
                 ValidarCep validaCep = new ValidarCep();
-                validaCep.VerificarCep(endereco);
+                endereco = validaCep.VerificarCep(endereco);
+
                 //endereco = ViaCepServico.BuscarEnderecoViaCEP(endereco.Cep);
                 resultBuscarCep.Text = string.Format("Endereço: {0}\nBairro: {1}\nCidade: {2}\nEstado: {3}", endereco.Logradouro, endereco.Bairro, endereco.Localidade, endereco.Uf);
 
@@ -38,7 +40,7 @@ namespace App01_ConsultarCep
             catch (Exception e)
             {
 
-                DisplayAlert("Erro",""+e, "OK");
+                DisplayAlert("Erro",e.Message, "OK");
             }
 
         }

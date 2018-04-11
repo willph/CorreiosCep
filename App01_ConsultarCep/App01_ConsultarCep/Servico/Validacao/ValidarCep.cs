@@ -9,7 +9,7 @@ namespace App01_ConsultarCep.Servico.Validacao
    public class ValidarCep
     {
        
-        public void VerificarCep(Endereco endereco)
+        public Endereco VerificarCep(Endereco endereco)
         {
             int novoCep;
 
@@ -29,7 +29,9 @@ namespace App01_ConsultarCep.Servico.Validacao
                 throw new Exception("O cep deve conter apenas número");
             }
             DadosCep dadosCep = new DadosCep();
-            dadosCep.BuscarEnderecoViaCEP(endereco);
+            endereco = dadosCep.BuscarEnderecoViaCEP(endereco);
+
+            return endereco;
            
         }
     }

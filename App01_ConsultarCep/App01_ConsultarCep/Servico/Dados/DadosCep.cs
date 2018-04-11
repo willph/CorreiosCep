@@ -9,9 +9,10 @@ namespace App01_ConsultarCep.Servico.Dados
 {
     public class DadosCep
     {
-
-        public void BuscarEnderecoViaCEP(Endereco endereco)
+       
+        public Endereco BuscarEnderecoViaCEP(Endereco endereco)
         {
+          
             string EnderecoUrl = "http://viacep.com.br/ws/{0}/json/";
             try
             {
@@ -21,7 +22,8 @@ namespace App01_ConsultarCep.Servico.Dados
                 string conteudo = webClient.DownloadString(NovoEnderecoURL);
 
                 endereco = JsonConvert.DeserializeObject<Endereco>(conteudo);
-
+                
+                return endereco;
 
             }
             catch (Exception e)
