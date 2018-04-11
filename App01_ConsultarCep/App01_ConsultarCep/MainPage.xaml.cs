@@ -33,6 +33,8 @@ namespace App01_ConsultarCep
 
                 //endereco = ViaCepServico.BuscarEnderecoViaCEP(endereco.Cep);
                 resultBuscarCep.Text = string.Format("Endereço: {0}\nBairro: {1}\nCidade: {2}\nEstado: {3}", endereco.Logradouro, endereco.Bairro, endereco.Localidade, endereco.Uf);
+                entryCep.Text = string.Empty;
+                
 
 
 
