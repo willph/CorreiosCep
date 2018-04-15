@@ -3,17 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:App01_ConsultarCep"
              x:Class="App01_ConsultarCep.MainPage">
-
-    <StackLayout BackgroundColor="#FFBF00" Padding="30" Spacing="30">
-        <Image Source="Logo.png" />
-        <Entry Keyboard="Numeric" Placeholder="Digite o CEP" PlaceholderColor="#FFBF00" BackgroundColor="#FFFFFF" x:Name="entryCep"/>
-        <Button Text="BUSCAR CEP" TextColor="#FFFFFF" BackgroundColor="#00416B" x:Name="buttonBuscar"/>
-        <Label Text="" 
+    <ScrollView Orientation="Vertical">
+        <StackLayout BackgroundColor="#FFBF00" Padding="30" Spacing="30">
+            <Image Source="Logo.png" />
+            <Entry Keyboard="Numeric" Placeholder="Digite o CEP" PlaceholderColor="#FFBF00" BackgroundColor="#FFFFFF" x:Name="entryCep"/>
+            <Button Text="BUSCAR CEP" TextColor="#FFFFFF" BackgroundColor="#00416B" x:Name="buttonBuscar"/>
+            <Label Text="" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" x:Name="resultBuscarCep"/>
-        
-    </StackLayout>
+        </StackLayout>
+    </ScrollView>
 
-	
+
 
 </ContentPage>
